@@ -75,11 +75,11 @@ const ContactSection = () => {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Request a Demo</CardTitle>
-                <CardDescription>See PropertyStats in action with a personalized demo.</CardDescription>
+                <CardTitle>Express Interest</CardTitle>
+                <CardDescription>See PropertyStats in action with a personalized walkthrough.</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full">Schedule Demo</Button>
+                <Button variant="outline" className="w-full">Express Interest</Button>
               </CardContent>
             </Card>
           </div>

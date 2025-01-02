@@ -39,7 +39,7 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <Button size="lg">Get Started</Button>
+        <Button size="lg">Express Interest</Button>
       </div>
     </header>
   );
