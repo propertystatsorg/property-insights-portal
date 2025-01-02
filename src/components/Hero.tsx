@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="relative w-full max-w-[1200px]">
           <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg" />
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
             alt="Modern Real Estate Analytics Dashboard"
             className="aspect-video rounded-lg border bg-muted object-cover w-full shadow-xl"
             width={1200}
