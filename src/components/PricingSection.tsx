@@ -7,7 +7,7 @@ const PricingSection = () => {
     {
       name: "Sales Data",
       price: "Rs 10,000",
-      description: "For professionals focusing on property sales",
+      description: "For real estate professionals",
       features: [
         "Sales transaction data",
         "Market trends analysis",
