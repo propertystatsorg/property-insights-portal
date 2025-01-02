@@ -27,13 +27,24 @@ const PricingSection = () => {
       ],
     },
     {
+      name: "Short-Term Rental Data",
+      price: "Rs 1,999",
+      description: "Perfect for vacation rental managers",
+      features: [
+        "Daily rate analytics",
+        "Seasonal demand trends",
+        "Occupancy rate data",
+        "Competitor insights",
+      ],
+    },
+    {
       name: "Full Access",
       price: "Rs 4,999",
       description: "Complete access to all data and features",
       features: [
         "All sales & rental data",
+        "Short-term rental insights",
         "Advanced analytics",
-        "Custom reports",
         "Priority support",
       ],
     },
@@ -48,7 +59,7 @@ const PricingSection = () => {
             Select the perfect plan for your needs. All plans include access to our core features.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan) => (
             <Card key={plan.name} className="flex flex-col">
               <CardHeader>
