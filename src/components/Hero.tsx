@@ -22,12 +22,12 @@ const Hero = () => {
         </div>
       </div>
       <div className="grid place-items-center">
-        <div className="relative">
+        <div className="relative w-full max-w-[1200px]">
           <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg" />
           <img
-            src="/placeholder.svg"
-            alt="Dashboard Preview"
-            className="aspect-video rounded-lg border bg-muted object-cover"
+            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+            alt="Real Estate Data Dashboard"
+            className="aspect-video rounded-lg border bg-muted object-cover w-full shadow-xl"
             width={1200}
             height={675}
           />
