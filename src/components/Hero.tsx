@@ -31,12 +31,6 @@ const Hero = () => {
             width={1200}
             height={675}
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black/70 p-8 rounded-lg text-white text-center">
-              <h2 className="text-3xl font-bold mb-2">Launching Soon</h2>
-              <p className="text-xl">First Quarter 2025</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
