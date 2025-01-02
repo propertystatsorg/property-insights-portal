@@ -78,7 +78,7 @@ const PricingSection = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Get Started</Button>
+                <Button className="w-full">Express Interest</Button>
               </CardFooter>
             </Card>
           ))}
