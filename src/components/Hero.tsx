@@ -22,15 +22,20 @@ const Hero = () => {
         </div>
       </div>
       <div className="grid place-items-center">
-        <div className="relative w-full max-w-[1200px]">
-          <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg" />
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-            alt="Launching Q1 2025 - Real Estate Analytics Platform"
-            className="aspect-video rounded-lg border bg-muted object-cover w-full shadow-xl"
-            width={1200}
-            height={675}
-          />
+        <div className="relative w-full max-w-[1200px] rounded-lg overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg z-10" />
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            className="w-full h-[675px] object-cover"
+          >
+            <source 
+              src="https://player.vimeo.com/external/517090081.hd.mp4?s=50c2c0e6b52686c8d233c2c318c7dde8b0bc2431&profile_id=175&oauth2_token_id=57447761" 
+              type="video/mp4" 
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
