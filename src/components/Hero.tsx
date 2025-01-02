@@ -25,12 +25,18 @@ const Hero = () => {
         <div className="relative w-full max-w-[1200px]">
           <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg" />
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-            alt="Modern Real Estate Analytics Dashboard"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+            alt="Launching Q1 2025 - Real Estate Analytics Platform"
             className="aspect-video rounded-lg border bg-muted object-cover w-full shadow-xl"
             width={1200}
             height={675}
           />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-black/70 p-8 rounded-lg text-white text-center">
+              <h2 className="text-3xl font-bold mb-2">Launching Soon</h2>
+              <p className="text-xl">First Quarter 2025</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
