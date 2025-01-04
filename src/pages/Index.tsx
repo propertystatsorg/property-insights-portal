@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ChartBar, Database, House, MapPin, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -8,6 +5,7 @@ import PricingSection from "@/components/PricingSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import ChatButton from "@/components/ChatButton";
+import TargetAudience from "@/components/TargetAudience";
 
 const Index = () => {
   return (
@@ -16,6 +14,7 @@ const Index = () => {
       <main>
         <Hero />
         <Features />
+        <TargetAudience />
         <PricingSection />
         <AboutSection />
         <ContactSection />
