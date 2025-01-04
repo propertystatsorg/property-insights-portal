@@ -55,7 +55,7 @@ const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <h4 className="font-semibold">Address</h4>
-                    <p className="text-muted-foreground">Port Louis, Mauritius</p>
+                    <p className="text-muted-foreground">SRTIP, Sharjah, UAE</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
