@@ -69,7 +69,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground">contact@propertystats.mu</p>
+                    <p className="text-muted-foreground">contact@propertystats.org</p>
                   </div>
                 </div>
               </CardContent>
