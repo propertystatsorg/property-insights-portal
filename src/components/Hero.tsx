@@ -12,7 +12,7 @@ const Hero = () => {
     <section className="container py-24 space-y-8">
       <div className="flex flex-col items-center text-center space-y-4">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Transforming Real Estate Insights in Mauritius
+          Transforming Real Estate in Mauritius
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
           Unlock the power of data with AI-driven insights tailored for real estate professionals.
