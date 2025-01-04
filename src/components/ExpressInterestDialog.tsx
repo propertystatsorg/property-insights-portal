@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ExpressInterestDialogProps {
   children: React.ReactNode;
@@ -25,24 +26,47 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
     company: "",
     profession: "",
   });
+  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Interest Expressed Successfully",
-      description: "We'll get back to you shortly with more information.",
-    });
-    setOpen(false);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      profession: "",
-    });
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('handle-interest', {
+        body: {
+          ...formData,
+          planName,
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Interest Expressed Successfully",
+        description: "We'll get back to you shortly with more information.",
+      });
+      
+      setOpen(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        profession: "",
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your interest. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -115,7 +139,9 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
               required
             />
           </div>
-          <Button type="submit" className="w-full">Submit</Button>
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? "Submitting..." : "Submit"}
+          </Button>
         </form>
       </DialogContent>
     </Dialog>
