@@ -23,19 +23,12 @@ const Hero = () => {
       </div>
       <div className="grid place-items-center">
         <div className="relative w-full max-w-[1200px] rounded-lg overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-background to-background/0 rounded-lg z-10" />
-          <video 
-            autoPlay 
-            muted 
-            loop 
+          <div className="absolute inset-0 bg-gradient-to-tr from-background/80 to-background/0 rounded-lg z-10" />
+          <img 
+            src="/lovable-uploads/77f45369-6279-4e62-bdf1-eb2580acf14f.png"
+            alt="Aerial view of Mauritius coastline showing pristine turquoise waters and lush green mountains"
             className="w-full h-[675px] object-cover"
-          >
-            <source 
-              src="https://player.vimeo.com/external/517090081.hd.mp4?s=50c2c0e6b52686c8d233c2c318c7dde8b0bc2431&profile_id=175&oauth2_token_id=57447761" 
-              type="video/mp4" 
-            />
-            Your browser does not support the video tag.
-          </video>
+          />
         </div>
       </div>
     </section>
