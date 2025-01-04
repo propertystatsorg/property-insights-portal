@@ -12,11 +12,19 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 interface ExpressInterestDialogProps {
   children: React.ReactNode;
   planName?: string;
 }
+
+const PLANS = [
+  "Basic Plan",
+  "Pro Plan",
+  "Enterprise Plan",
+  "I don't know yet"
+] as const;
 
 const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProps) => {
   const [formData, setFormData] = useState({
@@ -25,6 +33,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
     phone: "",
     company: "",
     profession: "",
+    selectedPlan: planName || "I don't know yet",
   });
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -38,7 +47,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
       const { error } = await supabase.functions.invoke('handle-interest', {
         body: {
           ...formData,
-          planName,
+          planName: formData.selectedPlan,
         },
       });
 
@@ -56,6 +65,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
         phone: "",
         company: "",
         profession: "",
+        selectedPlan: "I don't know yet",
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -76,6 +86,13 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
     }));
   };
 
+  const handlePlanChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      selectedPlan: value,
+    }));
+  };
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -87,6 +104,21 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+          <div className="space-y-2">
+            <Label>Select Plan</Label>
+            <RadioGroup
+              defaultValue={formData.selectedPlan}
+              onValueChange={handlePlanChange}
+              className="flex flex-col space-y-2"
+            >
+              {PLANS.map((plan) => (
+                <div key={plan} className="flex items-center space-x-2">
+                  <RadioGroupItem value={plan} id={plan} />
+                  <Label htmlFor={plan}>{plan}</Label>
+                </div>
+              ))}
+            </RadioGroup>
+          </div>
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
             <Input
