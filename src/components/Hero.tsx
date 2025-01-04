@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="container py-24 space-y-8">
+    <section className="container py-24 space-y-4">
       <div className="flex flex-col items-center text-center space-y-4">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
           Transforming Real Estate in Mauritius
