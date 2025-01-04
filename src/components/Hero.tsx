@@ -29,15 +29,6 @@ const Hero = () => {
           </ExpressInterestDialog>
         </div>
       </div>
-      <div className="grid place-items-center">
-        <div className="relative w-full max-w-[1200px] rounded-lg overflow-hidden">
-          <img 
-            src="/lovable-uploads/77f45369-6279-4e62-bdf1-eb2580acf14f.png"
-            alt="Aerial view of Mauritius coastline showing pristine turquoise waters and lush green mountains"
-            className="w-full h-[675px] object-cover"
-          />
-        </div>
-      </div>
     </section>
   );
 };
