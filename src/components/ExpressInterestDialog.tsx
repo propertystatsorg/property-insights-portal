@@ -7,25 +7,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Checkbox } from "@/components/ui/checkbox";
+import PlanSelection from "./PlanSelection";
+import ContactForm from "./ContactForm";
 
 interface ExpressInterestDialogProps {
   children: React.ReactNode;
   planName?: string;
 }
-
-const PLANS = [
-  "Sales Data",
-  "Rental Data",
-  "Short-term rental data",
-  "Full access",
-  "I don't know yet"
-] as const;
 
 const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProps) => {
   const [formData, setFormData] = useState({
@@ -90,11 +81,9 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
   const handlePlanChange = (plan: string, checked: boolean) => {
     setFormData((prev) => {
       if (checked) {
-        // If "I don't know yet" is selected, clear other selections
         if (plan === "I don't know yet") {
           return { ...prev, selectedPlans: ["I don't know yet"] };
         }
-        // If another plan is selected, remove "I don't know yet" if present
         const newPlans = prev.selectedPlans.filter(p => p !== "I don't know yet");
         return { ...prev, selectedPlans: [...newPlans, plan] };
       } else {
@@ -114,73 +103,14 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          <div className="space-y-2">
-            <Label>Select Plans</Label>
-            <div className="flex flex-col space-y-2">
-              {PLANS.map((plan) => (
-                <div key={plan} className="flex items-center space-x-2">
-                  <Checkbox 
-                    id={plan}
-                    checked={formData.selectedPlans.includes(plan)}
-                    onCheckedChange={(checked) => handlePlanChange(plan, checked as boolean)}
-                  />
-                  <Label htmlFor={plan}>{plan}</Label>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="phone">Phone</Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="company">Company Name</Label>
-            <Input
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="profession">Profession</Label>
-            <Input
-              id="profession"
-              name="profession"
-              value={formData.profession}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <PlanSelection 
+            selectedPlans={formData.selectedPlans}
+            onPlanChange={handlePlanChange}
+          />
+          <ContactForm 
+            formData={formData}
+            onChange={handleChange}
+          />
           <Button type="submit" className="w-full" disabled={loading}>
             {loading ? "Submitting..." : "Submit"}
           </Button>
