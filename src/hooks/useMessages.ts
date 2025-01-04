@@ -54,11 +54,13 @@ export const useMessages = () => {
     };
   }, [toast]);
 
-  const sendMessage = async (content: string) => {
+  const sendMessage = async (content: string, userName: string, userEmail: string) => {
     try {
       const userMessage = {
         content,
         sender: 'user' as const,
+        user_name: userName,
+        user_email: userEmail,
       };
 
       const { error: userError } = await supabase
@@ -72,6 +74,8 @@ export const useMessages = () => {
         const agentMessage = {
           content: "Thank you for your message. Our team will get back to you soon.",
           sender: 'agent' as const,
+          user_name: null,
+          user_email: null,
         };
 
         const { error: agentError } = await supabase
