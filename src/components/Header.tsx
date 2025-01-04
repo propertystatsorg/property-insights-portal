@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
+import ExpressInterestDialog from "./ExpressInterestDialog";
 
 const Header = () => {
   return (
@@ -39,7 +40,9 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <Button size="lg">Express Interest</Button>
+        <ExpressInterestDialog>
+          <Button size="lg">Express Interest</Button>
+        </ExpressInterestDialog>
       </div>
     </header>
   );

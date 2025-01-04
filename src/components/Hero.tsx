@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ExpressInterestDialog from "./ExpressInterestDialog";
 
 const Hero = () => {
   const scrollToPricing = () => {
@@ -21,9 +22,11 @@ const Hero = () => {
             Explore Plans
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button size="lg" variant="outline">
-            Express Interest
-          </Button>
+          <ExpressInterestDialog>
+            <Button size="lg" variant="outline">
+              Express Interest
+            </Button>
+          </ExpressInterestDialog>
         </div>
       </div>
       <div className="grid place-items-center">

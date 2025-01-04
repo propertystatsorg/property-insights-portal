@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
+import ExpressInterestDialog from "./ExpressInterestDialog";
 
 const ContactSection = () => {
   return (
@@ -79,7 +80,9 @@ const ContactSection = () => {
                 <CardDescription>See PropertyStats in action with a personalized walkthrough.</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full">Express Interest</Button>
+                <ExpressInterestDialog>
+                  <Button variant="outline" className="w-full">Express Interest</Button>
+                </ExpressInterestDialog>
               </CardContent>
             </Card>
           </div>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import ExpressInterestDialog from "./ExpressInterestDialog";
 
 const PricingSection = () => {
   const plans = [
@@ -78,14 +79,18 @@ const PricingSection = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Express Interest</Button>
+                <ExpressInterestDialog planName={plan.name}>
+                  <Button className="w-full">Express Interest</Button>
+                </ExpressInterestDialog>
               </CardFooter>
             </Card>
           ))}
         </div>
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">Need a custom solution?</p>
-          <Button variant="outline">Request Custom Quotation</Button>
+          <ExpressInterestDialog>
+            <Button variant="outline">Request Custom Quotation</Button>
+          </ExpressInterestDialog>
         </div>
       </div>
     </section>
