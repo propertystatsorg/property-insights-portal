@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface ExpressInterestDialogProps {
   children: React.ReactNode;
@@ -20,9 +20,10 @@ interface ExpressInterestDialogProps {
 }
 
 const PLANS = [
-  "Basic Plan",
-  "Pro Plan",
-  "Enterprise Plan",
+  "Sales Data",
+  "Rental Data",
+  "Short-term rental data",
+  "Full access",
   "I don't know yet"
 ] as const;
 
@@ -33,7 +34,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
     phone: "",
     company: "",
     profession: "",
-    selectedPlan: planName || "I don't know yet",
+    selectedPlans: planName ? [planName] : [],
   });
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -47,7 +48,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
       const { error } = await supabase.functions.invoke('handle-interest', {
         body: {
           ...formData,
-          planName: formData.selectedPlan,
+          planName: formData.selectedPlans.join(", "),
         },
       });
 
@@ -65,7 +66,7 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
         phone: "",
         company: "",
         profession: "",
-        selectedPlan: "I don't know yet",
+        selectedPlans: [],
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -86,11 +87,20 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
     }));
   };
 
-  const handlePlanChange = (value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      selectedPlan: value,
-    }));
+  const handlePlanChange = (plan: string, checked: boolean) => {
+    setFormData((prev) => {
+      if (checked) {
+        // If "I don't know yet" is selected, clear other selections
+        if (plan === "I don't know yet") {
+          return { ...prev, selectedPlans: ["I don't know yet"] };
+        }
+        // If another plan is selected, remove "I don't know yet" if present
+        const newPlans = prev.selectedPlans.filter(p => p !== "I don't know yet");
+        return { ...prev, selectedPlans: [...newPlans, plan] };
+      } else {
+        return { ...prev, selectedPlans: prev.selectedPlans.filter(p => p !== plan) };
+      }
+    });
   };
 
   return (
@@ -105,19 +115,19 @@ const ExpressInterestDialog = ({ children, planName }: ExpressInterestDialogProp
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label>Select Plan</Label>
-            <RadioGroup
-              defaultValue={formData.selectedPlan}
-              onValueChange={handlePlanChange}
-              className="flex flex-col space-y-2"
-            >
+            <Label>Select Plans</Label>
+            <div className="flex flex-col space-y-2">
               {PLANS.map((plan) => (
                 <div key={plan} className="flex items-center space-x-2">
-                  <RadioGroupItem value={plan} id={plan} />
+                  <Checkbox 
+                    id={plan}
+                    checked={formData.selectedPlans.includes(plan)}
+                    onCheckedChange={(checked) => handlePlanChange(plan, checked as boolean)}
+                  />
                   <Label htmlFor={plan}>{plan}</Label>
                 </div>
               ))}
-            </RadioGroup>
+            </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
