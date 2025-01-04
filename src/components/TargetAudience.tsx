@@ -9,6 +9,9 @@ import {
   Landmark,
   Building,
   GraduationCap,
+  Target,
+  Brain,
+  TrendingUp,
 } from "lucide-react";
 
 const audiences = [
@@ -89,10 +92,27 @@ const TargetAudience = () => {
             );
           })}
         </div>
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground max-w-[800px] mx-auto">
-            At PropertyStats, we aim to empower every real estate professional in Mauritius with the data they need to succeed in a competitive market. By offering easy access to comprehensive market insights, we help you make smarter decisions, increase your productivity, and drive business growth.
-          </p>
+        <div className="mt-16 bg-primary/5 rounded-2xl p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="flex flex-col items-center space-y-4">
+              <div className="p-3 bg-primary/10 rounded-full">
+                <Target className="h-8 w-8 text-primary" />
+              </div>
+              <p className="text-muted-foreground">Empowering every real estate professional in Mauritius with essential data</p>
+            </div>
+            <div className="flex flex-col items-center space-y-4">
+              <div className="p-3 bg-primary/10 rounded-full">
+                <Brain className="h-8 w-8 text-primary" />
+              </div>
+              <p className="text-muted-foreground">Make smarter decisions with comprehensive market insights</p>
+            </div>
+            <div className="flex flex-col items-center space-y-4">
+              <div className="p-3 bg-primary/10 rounded-full">
+                <TrendingUp className="h-8 w-8 text-primary" />
+              </div>
+              <p className="text-muted-foreground">Increase productivity and drive business growth</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
