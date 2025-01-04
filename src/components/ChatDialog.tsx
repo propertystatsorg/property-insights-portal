@@ -37,7 +37,8 @@ const ChatDialog = ({ children }: { children: React.ReactNode }) => {
         return;
       }
 
-      setMessages(data || []);
+      // Type assertion since we know the data matches our Message type
+      setMessages(data as Message[]);
       setIsLoading(false);
     };
 
@@ -56,6 +57,7 @@ const ChatDialog = ({ children }: { children: React.ReactNode }) => {
           table: 'messages',
         },
         (payload) => {
+          // Type assertion for the new message
           const newMessage = payload.new as Message;
           setMessages((prev) => [...prev, newMessage]);
         }
