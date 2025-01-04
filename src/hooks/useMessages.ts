@@ -63,11 +63,18 @@ export const useMessages = () => {
         user_email: userEmail,
       };
 
-      const { error: userError } = await supabase
+      const { data: insertedMessage, error: userError } = await supabase
         .from('messages')
-        .insert([userMessage]);
+        .insert([userMessage])
+        .select()
+        .single();
 
       if (userError) throw userError;
+
+      // Update messages state immediately with the user's message
+      if (insertedMessage) {
+        setMessages((prev) => [...prev, insertedMessage as Message]);
+      }
 
       // Simulate agent response
       setTimeout(async () => {
