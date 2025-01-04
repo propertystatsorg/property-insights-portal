@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    pricingSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="container py-24 space-y-8">
       <div className="flex flex-col items-center text-center space-y-4">
@@ -12,7 +17,7 @@ const Hero = () => {
           Unlock the power of data with AI-driven insights tailored for real estate professionals.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="gap-2">
+          <Button size="lg" className="gap-2" onClick={scrollToPricing}>
             Explore Plans
             <ArrowRight className="h-4 w-4" />
           </Button>
