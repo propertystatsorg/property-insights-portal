@@ -31,7 +31,6 @@ const Hero = () => {
       </div>
       <div className="grid place-items-center">
         <div className="relative w-full max-w-[1200px] rounded-lg overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-background/80 to-background/0 rounded-lg z-10" />
           <img 
             src="/lovable-uploads/77f45369-6279-4e62-bdf1-eb2580acf14f.png"
             alt="Aerial view of Mauritius coastline showing pristine turquoise waters and lush green mountains"
