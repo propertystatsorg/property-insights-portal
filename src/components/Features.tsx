@@ -27,6 +27,14 @@ const features = [
 const Features = () => {
   return (
     <section id="features" className="container py-24 space-y-8">
+      <Card className="p-6 bg-primary/5 border-none">
+        <CardContent className="text-center px-4 sm:px-6 md:px-8">
+          <p className="text-xl md:text-2xl font-semibold leading-relaxed text-foreground">
+            PropertyStats is a cutting-edge platform designed specifically for real estate professionals in Mauritius. Whether you're a seasoned expert or just starting out, our platform offers the tools and insights you need to stay ahead in the dynamic real estate market.
+          </p>
+        </CardContent>
+      </Card>
+
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Why PropertyStats?</h2>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">

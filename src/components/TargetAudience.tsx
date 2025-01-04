@@ -68,9 +68,6 @@ const TargetAudience = () => {
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Who is PropertyStats for?</h2>
-          <p className="mx-auto max-w-[800px] text-muted-foreground">
-            PropertyStats is a cutting-edge platform designed specifically for real estate professionals in Mauritius. Whether you're a seasoned expert or just starting out, our platform offers the tools and insights you need to stay ahead in the dynamic real estate market.
-          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {audiences.map((audience) => {
