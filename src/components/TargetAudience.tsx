@@ -4,7 +4,6 @@ import {
   UserCog,
   Scale,
   Briefcase,
-  Ruler,
   HardHat,
   Camera,
   Landmark,
@@ -37,11 +36,6 @@ const audiences = [
     title: "Legal & Financial Experts",
     description: "Stay updated with the latest market trends and property pricing data to provide the best legal, financial, and investment advice.",
     icon: Briefcase,
-  },
-  {
-    title: "Architects & Engineers",
-    description: "Understand land use trends and property demand in specific regions for informed project planning.",
-    icon: Ruler,
   },
   {
     title: "Construction Professionals",
