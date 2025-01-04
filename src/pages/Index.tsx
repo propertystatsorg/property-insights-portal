@@ -7,6 +7,7 @@ import Features from "@/components/Features";
 import PricingSection from "@/components/PricingSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import ChatButton from "@/components/ChatButton";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <AboutSection />
         <ContactSection />
       </main>
+      <ChatButton />
     </div>
   );
 };
