@@ -1,22 +1,22 @@
 export const colors = {
   offWhite: {
-    hex: '#F4F4F0',
-    hsl: '60 20% 95%'
+    hex: '#EBE2D9',
+    hsl: '30 30% 89%'
   },
-  beige: {
-    hex: '#C0AD7D',
-    hsl: '46 35% 62%'
+  sage: {
+    hex: '#BBD2C6',
+    hsl: '147 23% 78%'
   },
-  terracotta: {
-    hex: '#D7792C',
-    hsl: '25 69% 51%'
+  teal: {
+    hex: '#7EA299',
+    hsl: '167 15% 57%'
   },
-  brown: {
-    hex: '#A77154',
-    hsl: '24 33% 49%'
+  blue: {
+    hex: '#5AACBD',
+    hsl: '192 38% 55%'
   },
   darkGreen: {
-    hex: '#35433D',
-    hsl: '154 13% 23%'
+    hex: '#2F453A',
+    hsl: '147 20% 23%'
   }
 } as const;

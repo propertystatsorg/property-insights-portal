@@ -1,17 +1,17 @@
 import { colors } from './colors';
 
 export const lightTheme = {
-  background: colors.beige.hsl,
+  background: colors.offWhite.hsl,
   foreground: colors.darkGreen.hsl,
 
-  card: colors.beige.hsl,
+  card: colors.offWhite.hsl,
   'card-foreground': colors.darkGreen.hsl,
 
-  popover: colors.beige.hsl,
+  popover: colors.offWhite.hsl,
   'popover-foreground': colors.darkGreen.hsl,
 
   primary: colors.darkGreen.hsl,
-  'primary-foreground': colors.beige.hsl,
+  'primary-foreground': colors.offWhite.hsl,
 
   secondary: colors.sage.hsl,
   'secondary-foreground': colors.darkGreen.hsl,
@@ -23,17 +23,17 @@ export const lightTheme = {
   'accent-foreground': colors.darkGreen.hsl,
 
   destructive: colors.blue.hsl,
-  'destructive-foreground': colors.beige.hsl,
+  'destructive-foreground': colors.offWhite.hsl,
 
   border: colors.sage.hsl,
   input: colors.sage.hsl,
   ring: colors.darkGreen.hsl,
 
   sidebar: {
-    background: colors.beige.hsl,
+    background: colors.offWhite.hsl,
     foreground: colors.darkGreen.hsl,
     primary: colors.darkGreen.hsl,
-    'primary-foreground': colors.beige.hsl,
+    'primary-foreground': colors.offWhite.hsl,
     accent: colors.sage.hsl,
     'accent-foreground': colors.darkGreen.hsl,
     border: colors.sage.hsl,
