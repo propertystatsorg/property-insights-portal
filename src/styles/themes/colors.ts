@@ -1,23 +1,22 @@
-// Define our color palette as constants for reuse
 export const colors = {
+  offWhite: {
+    hex: '#F4F4F0',
+    hsl: '60 20% 95%'
+  },
   beige: {
-    hex: '#EBE2D9',
-    hsl: '33 24% 89%'
+    hex: '#C0AD7D',
+    hsl: '46 35% 62%'
   },
-  sage: {
-    hex: '#BBD2C6',
-    hsl: '156 24% 78%'
+  terracotta: {
+    hex: '#D7792C',
+    hsl: '25 69% 51%'
   },
-  teal: {
-    hex: '#7EA299',
-    hsl: '157 13% 53%'
-  },
-  blue: {
-    hex: '#5AACBD',
-    hsl: '196 37% 55%'
+  brown: {
+    hex: '#A77154',
+    hsl: '24 33% 49%'
   },
   darkGreen: {
-    hex: '#2F453A',
-    hsl: '157 19% 23%'
+    hex: '#35433D',
+    hsl: '154 13% 23%'
   }
 } as const;
