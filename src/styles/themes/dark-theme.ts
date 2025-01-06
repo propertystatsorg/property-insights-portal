@@ -1,42 +1,42 @@
 import { colors } from './colors';
 
 export const darkTheme = {
-  background: colors.darkGreen.hsl,
-  foreground: colors.offWhite.hsl,
+  background: colors.black.hsl,
+  foreground: colors.gray.hsl,
 
-  card: colors.darkGreen.hsl,
-  'card-foreground': colors.offWhite.hsl,
+  card: colors.black.hsl,
+  'card-foreground': colors.gray.hsl,
 
-  popover: colors.darkGreen.hsl,
-  'popover-foreground': colors.offWhite.hsl,
+  popover: colors.black.hsl,
+  'popover-foreground': colors.gray.hsl,
 
-  primary: colors.offWhite.hsl,
-  'primary-foreground': colors.darkGreen.hsl,
+  primary: colors.gray.hsl,
+  'primary-foreground': colors.black.hsl,
 
-  secondary: colors.teal.hsl,
-  'secondary-foreground': colors.offWhite.hsl,
+  secondary: colors.black.hsl,
+  'secondary-foreground': colors.gray.hsl,
 
-  muted: colors.teal.hsl,
-  'muted-foreground': colors.sage.hsl,
+  muted: colors.black.hsl,
+  'muted-foreground': colors.gray.hsl,
 
-  accent: colors.teal.hsl,
-  'accent-foreground': colors.offWhite.hsl,
+  accent: colors.black.hsl,
+  'accent-foreground': colors.gray.hsl,
 
-  destructive: colors.blue.hsl,
-  'destructive-foreground': colors.offWhite.hsl,
+  destructive: colors.gray.hsl,
+  'destructive-foreground': colors.black.hsl,
 
-  border: colors.teal.hsl,
-  input: colors.teal.hsl,
-  ring: colors.sage.hsl,
+  border: colors.black.hsl,
+  input: colors.black.hsl,
+  ring: colors.gray.hsl,
 
   sidebar: {
-    background: colors.darkGreen.hsl,
-    foreground: colors.offWhite.hsl,
-    primary: colors.blue.hsl,
-    'primary-foreground': colors.offWhite.hsl,
-    accent: colors.teal.hsl,
-    'accent-foreground': colors.offWhite.hsl,
-    border: colors.teal.hsl,
-    ring: colors.blue.hsl,
+    background: colors.black.hsl,
+    foreground: colors.gray.hsl,
+    primary: colors.gray.hsl,
+    'primary-foreground': colors.black.hsl,
+    accent: colors.black.hsl,
+    'accent-foreground': colors.gray.hsl,
+    border: colors.black.hsl,
+    ring: colors.gray.hsl,
   }
 } as const;
