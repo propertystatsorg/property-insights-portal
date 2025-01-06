@@ -1,42 +1,42 @@
 import { colors } from './colors';
 
 export const lightTheme = {
-  background: colors.gray.hsl,
+  background: colors.lightGray.hsl,
   foreground: colors.black.hsl,
 
-  card: colors.gray.hsl,
+  card: colors.lightGray.hsl,
   'card-foreground': colors.black.hsl,
 
-  popover: colors.gray.hsl,
+  popover: colors.lightGray.hsl,
   'popover-foreground': colors.black.hsl,
 
-  primary: colors.black.hsl,
-  'primary-foreground': colors.gray.hsl,
+  primary: colors.blue.hsl,
+  'primary-foreground': colors.lightGray.hsl,
 
-  secondary: colors.gray.hsl,
-  'secondary-foreground': colors.black.hsl,
+  secondary: colors.darkGray.hsl,
+  'secondary-foreground': colors.lightGray.hsl,
 
-  muted: colors.gray.hsl,
+  muted: colors.mediumGray.hsl,
   'muted-foreground': colors.black.hsl,
 
-  accent: colors.gray.hsl,
-  'accent-foreground': colors.black.hsl,
+  accent: colors.blue.hsl,
+  'accent-foreground': colors.lightGray.hsl,
 
   destructive: colors.black.hsl,
-  'destructive-foreground': colors.gray.hsl,
+  'destructive-foreground': colors.lightGray.hsl,
 
-  border: colors.gray.hsl,
-  input: colors.gray.hsl,
-  ring: colors.black.hsl,
+  border: colors.darkGray.hsl,
+  input: colors.darkGray.hsl,
+  ring: colors.blue.hsl,
 
   sidebar: {
-    background: colors.gray.hsl,
+    background: colors.lightGray.hsl,
     foreground: colors.black.hsl,
-    primary: colors.black.hsl,
-    'primary-foreground': colors.gray.hsl,
-    accent: colors.gray.hsl,
-    'accent-foreground': colors.black.hsl,
-    border: colors.gray.hsl,
-    ring: colors.black.hsl,
+    primary: colors.blue.hsl,
+    'primary-foreground': colors.lightGray.hsl,
+    accent: colors.darkGray.hsl,
+    'accent-foreground': colors.lightGray.hsl,
+    border: colors.darkGray.hsl,
+    ring: colors.blue.hsl,
   }
 } as const;
