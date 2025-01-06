@@ -7,7 +7,7 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Sales Data",
-      price: "Rs 10,000",
+      price: "Rs 5,000",
       description: "For real estate professionals",
       features: [
         "Sales transaction data",
@@ -18,7 +18,7 @@ const PricingSection = () => {
     },
     {
       name: "Rental Data",
-      price: "Rs 10,000",
+      price: "Rs 5,000",
       description: "Ideal for rental market specialists",
       features: [
         "Rental market data",
@@ -29,7 +29,7 @@ const PricingSection = () => {
     },
     {
       name: "Short-Term Rental Data",
-      price: "Rs 10,000",
+      price: "Rs 5,000",
       description: "Perfect for vacation rental managers",
       features: [
         "Daily rate analytics",
@@ -40,7 +40,7 @@ const PricingSection = () => {
     },
     {
       name: "Full Access",
-      price: "Rs 25,000",
+      price: "Rs 13,000",
       description: "Complete access to all data and features",
       features: [
         "All sales & rental data",
