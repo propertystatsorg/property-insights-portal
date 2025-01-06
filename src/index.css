@@ -4,64 +4,64 @@
 
 @layer base {
   :root {
-    --background: 0 0% 40%; /* #666666 */
+    --background: 0 0% 93%; /* #eeeeee */
     --foreground: 0 0% 0%; /* #000000 */
-    --card: 0 0% 40%; /* #666666 */
+    --card: 0 0% 93%; /* #eeeeee */
     --card-foreground: 0 0% 0%; /* #000000 */
-    --popover: 0 0% 40%; /* #666666 */
+    --popover: 0 0% 93%; /* #eeeeee */
     --popover-foreground: 0 0% 0%; /* #000000 */
-    --primary: 0 0% 0%; /* #000000 */
-    --primary-foreground: 0 0% 40%; /* #666666 */
+    --primary: 204 100% 40%; /* #0088cc */
+    --primary-foreground: 0 0% 93%; /* #eeeeee */
     --secondary: 0 0% 40%; /* #666666 */
-    --secondary-foreground: 0 0% 0%; /* #000000 */
-    --muted: 0 0% 40%; /* #666666 */
+    --secondary-foreground: 0 0% 93%; /* #eeeeee */
+    --muted: 0 0% 59%; /* #979797 */
     --muted-foreground: 0 0% 0%; /* #000000 */
-    --accent: 0 0% 40%; /* #666666 */
-    --accent-foreground: 0 0% 0%; /* #000000 */
+    --accent: 204 100% 40%; /* #0088cc */
+    --accent-foreground: 0 0% 93%; /* #eeeeee */
     --destructive: 0 0% 0%; /* #000000 */
-    --destructive-foreground: 0 0% 40%; /* #666666 */
+    --destructive-foreground: 0 0% 93%; /* #eeeeee */
     --border: 0 0% 40%; /* #666666 */
     --input: 0 0% 40%; /* #666666 */
-    --ring: 0 0% 0%; /* #000000 */
+    --ring: 204 100% 40%; /* #0088cc */
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 40%; /* #666666 */
+    --sidebar-background: 0 0% 93%; /* #eeeeee */
     --sidebar-foreground: 0 0% 0%; /* #000000 */
-    --sidebar-primary: 0 0% 0%; /* #000000 */
-    --sidebar-primary-foreground: 0 0% 40%; /* #666666 */
+    --sidebar-primary: 204 100% 40%; /* #0088cc */
+    --sidebar-primary-foreground: 0 0% 93%; /* #eeeeee */
     --sidebar-accent: 0 0% 40%; /* #666666 */
-    --sidebar-accent-foreground: 0 0% 0%; /* #000000 */
+    --sidebar-accent-foreground: 0 0% 93%; /* #eeeeee */
     --sidebar-border: 0 0% 40%; /* #666666 */
-    --sidebar-ring: 0 0% 0%; /* #000000 */
+    --sidebar-ring: 204 100% 40%; /* #0088cc */
   }
 
   .dark {
     --background: 0 0% 0%; /* #000000 */
-    --foreground: 0 0% 40%; /* #666666 */
+    --foreground: 0 0% 93%; /* #eeeeee */
     --card: 0 0% 0%; /* #000000 */
-    --card-foreground: 0 0% 40%; /* #666666 */
+    --card-foreground: 0 0% 93%; /* #eeeeee */
     --popover: 0 0% 0%; /* #000000 */
-    --popover-foreground: 0 0% 40%; /* #666666 */
-    --primary: 0 0% 40%; /* #666666 */
+    --popover-foreground: 0 0% 93%; /* #eeeeee */
+    --primary: 204 100% 40%; /* #0088cc */
     --primary-foreground: 0 0% 0%; /* #000000 */
-    --secondary: 0 0% 0%; /* #000000 */
-    --secondary-foreground: 0 0% 40%; /* #666666 */
-    --muted: 0 0% 0%; /* #000000 */
-    --muted-foreground: 0 0% 40%; /* #666666 */
-    --accent: 0 0% 0%; /* #000000 */
-    --accent-foreground: 0 0% 40%; /* #666666 */
-    --destructive: 0 0% 40%; /* #666666 */
+    --secondary: 0 0% 40%; /* #666666 */
+    --secondary-foreground: 0 0% 93%; /* #eeeeee */
+    --muted: 0 0% 40%; /* #666666 */
+    --muted-foreground: 0 0% 93%; /* #eeeeee */
+    --accent: 204 100% 40%; /* #0088cc */
+    --accent-foreground: 0 0% 0%; /* #000000 */
+    --destructive: 0 0% 93%; /* #eeeeee */
     --destructive-foreground: 0 0% 0%; /* #000000 */
-    --border: 0 0% 0%; /* #000000 */
-    --input: 0 0% 0%; /* #000000 */
-    --ring: 0 0% 40%; /* #666666 */
+    --border: 0 0% 40%; /* #666666 */
+    --input: 0 0% 40%; /* #666666 */
+    --ring: 204 100% 40%; /* #0088cc */
     --sidebar-background: 0 0% 0%; /* #000000 */
-    --sidebar-foreground: 0 0% 40%; /* #666666 */
-    --sidebar-primary: 0 0% 40%; /* #666666 */
+    --sidebar-foreground: 0 0% 93%; /* #eeeeee */
+    --sidebar-primary: 204 100% 40%; /* #0088cc */
     --sidebar-primary-foreground: 0 0% 0%; /* #000000 */
-    --sidebar-accent: 0 0% 0%; /* #000000 */
-    --sidebar-accent-foreground: 0 0% 40%; /* #666666 */
-    --sidebar-border: 0 0% 0%; /* #000000 */
-    --sidebar-ring: 0 0% 40%; /* #666666 */
+    --sidebar-accent: 0 0% 40%; /* #666666 */
+    --sidebar-accent-foreground: 0 0% 93%; /* #eeeeee */
+    --sidebar-border: 0 0% 40%; /* #666666 */
+    --sidebar-ring: 204 100% 40%; /* #0088cc */
   }
 }
 
