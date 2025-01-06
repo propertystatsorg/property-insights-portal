@@ -2,12 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import ExpressInterestDialog from "./ExpressInterestDialog";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useState } from "react";
 
 const PricingSection = () => {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
+
+  const getPrice = (monthlyPrice: number) => {
+    if (billingCycle === "yearly") {
+      return monthlyPrice === 5000 ? 4000 : 10000;
+    }
+    return monthlyPrice;
+  };
+
   const plans = [
     {
       name: "Sales Data",
-      price: "Rs 5,000",
+      monthlyPrice: 5000,
       description: "For real estate professionals",
       features: [
         "Sales transaction data",
@@ -18,7 +29,7 @@ const PricingSection = () => {
     },
     {
       name: "Rental Data",
-      price: "Rs 5,000",
+      monthlyPrice: 5000,
       description: "Ideal for rental market specialists",
       features: [
         "Rental market data",
@@ -29,7 +40,7 @@ const PricingSection = () => {
     },
     {
       name: "Short-Term Rental Data",
-      price: "Rs 5,000",
+      monthlyPrice: 5000,
       description: "Perfect for vacation rental managers",
       features: [
         "Daily rate analytics",
@@ -40,7 +51,7 @@ const PricingSection = () => {
     },
     {
       name: "Full Access",
-      price: "Rs 13,000",
+      monthlyPrice: 13000,
       description: "Complete access to all data and features",
       features: [
         "All sales & rental data",
@@ -59,6 +70,15 @@ const PricingSection = () => {
           <p className="mx-auto max-w-[700px] text-muted-foreground">
             Select the perfect plan for your needs. All plans include access to our core features.
           </p>
+          <div className="flex justify-center mt-6">
+            <ToggleGroup type="single" value={billingCycle} onValueChange={(value) => value && setBillingCycle(value as "monthly" | "yearly")}>
+              <ToggleGroupItem value="monthly" className="px-4">Monthly</ToggleGroupItem>
+              <ToggleGroupItem value="yearly" className="px-4">Annual</ToggleGroupItem>
+            </ToggleGroup>
+          </div>
+          {billingCycle === "yearly" && (
+            <p className="text-sm text-primary">Save up to 23% with annual billing!</p>
+          )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan) => (
@@ -68,7 +88,10 @@ const PricingSection = () => {
                 <CardDescription>{plan.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
-                <div className="text-3xl font-bold mb-4">{plan.price}<span className="text-base font-normal text-muted-foreground">/month</span></div>
+                <div className="text-3xl font-bold mb-4">
+                  Rs {getPrice(plan.monthlyPrice).toLocaleString()}
+                  <span className="text-base font-normal text-muted-foreground">/{billingCycle === "monthly" ? "month" : "month, billed annually"}</span>
+                </div>
                 <ul className="space-y-2">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center">
